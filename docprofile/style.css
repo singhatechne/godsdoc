@@ -1,0 +1,283 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5; /* Light background for the page */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    min-height: 100vh;
+}
+
+.portfolio-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px; /* Max width similar to the image's overall look */
+    margin-top: 20px; /* Space from the top edge */
+    overflow: hidden; /* Ensures borders/shadows are contained */
+}
+
+/* Header & Back Link */
+.portfolio-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid #eee;
+    background-color: #fdfdfd;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease-in-out;
+}
+
+.back-link i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+    color: #007bff;
+    transition: color 0.2s ease-in-out;
+}
+
+.back-link:hover {
+    color: #0056b3;
+}
+
+.back-link:hover i {
+    color: #0056b3;
+}
+
+/* Doctor Profile Card Layout */
+.doctor-profile-card {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+    padding: 30px;
+}
+
+.profile-left {
+    flex: 1;
+    min-width: 280px; /* Minimum width for the left column */
+    margin-right: 30px;
+    padding-right: 30px;
+    border-right: 1px solid #eee;
+}
+
+.profile-right {
+    flex: 2; /* Right column takes more space */
+    min-width: 400px; /* Minimum width for the right column */
+}
+
+/* Profile Image */
+.profile-image-container {
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensures image covers container without distortion */
+}
+
+/* Section Headings */
+section {
+    margin-bottom: 30px;
+}
+
+section h3 {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+
+section h3 i {
+    margin-right: 10px;
+    color: #007bff;
+    font-size: 1.2em;
+}
+
+
+/* Personal Info */
+.personal-info h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.personal-info h2 {
+    font-size: 1.1rem;
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.personal-info p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Expertise Tags */
+.expertise-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background-color: #e9f7ff;
+    color: #007bff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Contact Section */
+.contact-section p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-section i {
+    margin-right: 10px;
+    color: #007bff;
+    font-size: 1rem;
+    width: 18px; /* Standardize icon width */
+}
+
+/* Social Media */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #007bff;
+    font-size: 1.5rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    color: #0056b3;
+}
+
+/* Education & Experience Sections */
+.education-item, .experience-item {
+    margin-bottom: 20px;
+}
+
+.education-item h4, .experience-item h4 {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.education-item p, .experience-item p {
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.education-item p strong, .experience-item p strong {
+    color: #333;
+}
+
+.experience-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Certificate Section */
+.certificate-section ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+.certificate-section li {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+}
+
+.certificate-section li:before {
+    content: "\f00c"; /* Font Awesome check icon */
+    font-family: "Font Awesome 5 Free"; /* Use Font Awesome font */
+    font-weight: 900; /* Solid icon */
+    color: #28a745; /* Green checkmark */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .doctor-profile-card {
+        flex-direction: column; /* Stack columns vertically */
+        padding: 20px;
+    }
+
+    .profile-left {
+        border-right: none; /* Remove vertical border */
+        border-bottom: 1px solid #eee; /* Add horizontal border */
+        margin-right: 0;
+        padding-right: 0;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+
+    .profile-right {
+        min-width: unset; /* Remove min-width for smaller screens */
+    }
+
+    .portfolio-container {
+        margin: 20px; /* Less margin on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-container {
+        border-radius: 0; /* Full width on very small screens */
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    .portfolio-header, .doctor-profile-card {
+        padding: 15px;
+    }
+
+    .personal-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .personal-info h2 {
+        font-size: 1rem;
+    }
+
+    section h3 {
+        font-size: 1rem;
+    }
+}

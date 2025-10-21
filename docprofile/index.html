@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gods Life Health Care - Your Health Deserves the Right Specialist</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts for Inter (or similar sans-serif) and Playfair Display (for italic) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .logo-text span {
+            color: #3498db;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #3498db;
+        }
+
+        .nav-menu .btn {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-menu .btn:hover {
+            background: #2980b9;
+            color: white;
+        }
+
+        .ham-icon {
+            display: none;
+        }
+
+        .ham-img {
+            height: 25px;
+            width: auto;
+        }
+
+        /* Hero Section Styles */
+        .hero-bg-gradient {
+            background-image: url('dockback1.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .text-gradient-dark {
+            color: #2c3e50; /* A dark, deep blue-gray */
+        }
+        .text-gradient-specialist {
+            font-family: 'Playfair Display', serif; /* Use a serif font for the italicized word */
+            font-style: italic;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Improved doctor image positioning */
+        .doctor-image-container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .doctor-img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            object-position: center bottom;
+        }
+
+        /* Overlay cards positioning - FIXED */
+        .overlay-card {
+            position: absolute;
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            z-index: 20;
+            max-width: 280px;
+        }
+
+        @media (min-width: 1024px) {
+            .doctor-image-container {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            
+            .doctor-img {
+                height: 100%;
+                width: auto;
+                max-width: none;
+                object-fit: contain;
+                object-position: center bottom;
+            }
+            
+            .overlay-card.patients-joined {
+                bottom: 40%;
+                left: -5%;
+                width: 18rem;
+            }
+            
+            .overlay-card.medical-history {
+                bottom: -150%;
+                left: 10%;
+                width: 16rem;
+            }
+            
+            .overlay-card.virtual-care {
+                bottom: -40%;
+                right: -18%;
+                width: 18rem;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .doctor-image-container {
+                height: 400px;
+                margin-top: 2rem;
+            }
+            
+            .overlay-card {
+                position: relative;
+                margin-bottom: 1rem;
+                left: auto;
+                top: auto;
+                transform: none;
+                width: 90%;
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .overlay-card.medical-history {
+                margin-top: 2rem;
+            }
+        }
+
+        section {
+            padding-top: 40px;
+            padding-bottom: 0px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #002c5f;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: #00a1ab;
+        }
+        
+        .section-title p {
+            color: #777777;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .section-divider {
+            border-top: 1px solid #e0e0e0;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 1000px;
+            position: relative;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+            margin-bottom: 0px;
+        }
+
+        .nav-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Partners Grid Styles */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Partner Card Styles */
+        .partner-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .partner-img {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .partner-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .partner-card:hover .partner-img img {
+            transform: scale(1.05);
+        }
+
+        .partner-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+        }
+
+        .partner-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .partner-location {
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .partner-content {
+            padding: 20px;
+        }
+
+        .partner-specialties {
+            list-style: none;
+        }
+
+        .partner-specialties li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .partner-specialties li:before {
+            content: "•";
+            color: #00a1ab;
+            position: absolute;
+            left: 0;
+        }
+
+        .partner-specialties li:last-child {
+            border-bottom: none;
+        }
+
+        /* Doctor Cards - UPDATED with View Profile button */
+        .partner-doctor {
+            transition: opacity 0.3s ease;
+            display: inline-block; 
+            cursor: pointer;
+            width: 50%;
+        }
+
+        .doctor-card {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: block;
+            height: 100%;
+            position: relative;
+        }
+        
+        .doctor-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+        }
+        
+        .doctor-card:hover .doctor-name {
+            color: #00a1ab;
+            text-decoration: underline;
+        }
+
+        .doctor-img1 {
+            width: 120px;
+            height: 120px;
+            border-radius: 100%; 
+            opacity: 0;
+        }
+        
+        .doctor-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px;
+            border: 0px solid #00a1ab;
+            
+        }
+        
+        .doctor-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .doctor-name {
+            color: #002c5f;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+        
+        .doctor-specialty {
+            color: #00a1ab;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+        
+        .doctor-experience {
+            color: #777777;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .doctor-hospital {
+            color: #777777;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .doctor-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .doctor-card .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #2c3e50;
+            border: 1px solid #e0e0e0;
+        }
+
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p {
+            color: #bdc3c7;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #3498db;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #34495e;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #3498db;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 900px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .ham-icon {
+                display: block;
+            }
+            
+            .doctor-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .doctor-buttons .btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN1iie8n5MkShNgEeBfpmQfPl2lCBqpYOnQg&s" alt="Gods Life Health Care" style="border-radius: 30px;">
+                <div class="logo-text">Gods <span>Life</span></div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Doctors</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="btn">Get Consultation</a></li>
+            </ul>
+
+            <div class="ham-icon">
+                <img class="ham-img" src="https://placehold.co/25x25/2c3e50/fff?text=☰" alt="Menu">
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION - REDUCED HEIGHT -->
+    <div class="relative flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8" style="min-height: 80vh;">
+        <div class="absolute inset-0 hero-bg-gradient"></div> 
+        <!-- Background Gradient -->
+        <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Section: Text Content and Buttons -->
+            <div class="text-center lg:text-left">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-gradient-dark mb-4">
+                    Your Health <br> Deserves the right <span class="text-gradient-specialist font-normal">specialist</span>
+                </h1>
+                <p class="text-lg text-gray-700 max-w-md mx-auto lg:mx-0 mb-8">
+                    Connect with top rated doctors who listen and prioritize your health journey
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
+                    <button class="bg-[#2c3e50] text-white font-medium py-3 px-6 rounded-full flex items-center shadow-lg hover:bg-opacity-90 transition duration-300 w-full sm:w-auto justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" class="lucide lucide-search w-5 h-5 mr-2"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>
+                        Find a Doctor
+                    </button>
+                    <button class="bg-white text-gray-800 font-medium py-3 px-6 rounded-full flex items-center border border-gray-300 shadow-md hover:bg-gray-50 transition duration-300 w-full sm:w-auto justify-center">
+                        How It Works
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-5 h-5 ml-2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Feature Cards (Bottom Left) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gradient-dark mb-2">Free Checkup</h3>
+                        <p class="text-gray-600 text-base">Comprehensive evaluation with no upfront costs. Limited time offer.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gradient-dark mb-2">Custom Treatment Plan</h3>
+                        <p class="text-gray-600 text-base">From diagnosis to recovery, we map every step for your unique needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section: Doctor Image and Floating Cards -->
+            <div class="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
+                <!-- Main Doctor Image -->
+                <div class="doctor-image-container">
+                    <img src="" 
+                         alt="" class="doctor-img1">
+                        
+                    <!-- Overlay Card 1 (Patients Joined) -->
+                    <div class="overlay-card patients-joined">
+                        <div class="flex justify-center -space-x-2 mb-2">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Avatar 1" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Avatar 2" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Avatar 3" class="w-10 h-10 rounded-full border-2 border-white">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center text-xs font-bold text-blue-700">30M+</div>
+                        </div>
+                        <p class="text-sm text-gray-700 font-medium leading-snug">Join millions who found the right doctor for their unique health needs.</p>
+                    </div>
+
+                    <!-- Overlay Card 2 (Medical History) -->
+                    <div class="overlay-card medical-history">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-file-medical text-gray-500 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-700">Your full medical history</p>
+                                <p class="text-xs text-gray-500 leading-snug">available to every clinician</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Overlay Card 3 (Virtual Care Team) -->
+                    <div class="overlay-card virtual-care">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Small Doctor Avatar" class="w-14 h-14 rounded-lg object-cover flex-shrink-0">
+                            <div>
+                                <p class="text-sm font-semibold text-gray-700">24/7 Virtual Care Team at Your Service</p>
+                                <p class="text-xs text-gray-500 leading-snug mt-1">Board certified doctors available anytime</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partner Doctors Section -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="partner-doctor">Our Partner Doctors</h2>
+                <p>World-renowned medical professionals</p>
+            </div>
+            
+            <div class="partners-grid">
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Ram Yadav">
+                    </div>
+                    <h3 class="doctor-name">Dr. Ram Yadav</h3>
+                    <div class="doctor-specialty">Cardiothoracic Surgeon</div>
+                    <div class="doctor-experience">7+ Years of Experience</div>
+                    <div class="doctor-hospital">Global Health Institute, Bangkok</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="docprofile/docpro1.html" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Rajiv Patel">
+                    </div>
+                    <h3 class="doctor-name">Dr. Rajiv Patel</h3>
+                    <div class="doctor-specialty">Orthopedic Surgeon</div>
+                    <div class="doctor-experience">15+ Years of Experience</div>
+                    <div class="doctor-hospital">Asia Medical Center, Singapore</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Sophia Williams">
+                    </div>
+                    <h3 class="doctor-name">Dr. Sophia Williams</h3>
+                    <div class="doctor-specialty">Plastic Surgeon</div>
+                    <div class="doctor-experience">10+ Years of Experience</div>
+                    <div class="doctor-hospital">European Health Group, Berlin</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Ram Yadav">
+                    </div>
+                    <h3 class="doctor-name">Dr. Ram Yadav</h3>
+                    <div class="doctor-specialty">Cardiothoracic Surgeon</div>
+                    <div class="doctor-experience">7+ Years of Experience</div>
+                    <div class="doctor-hospital">Global Health Institute, Bangkok</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                 <!-- Doctor Card 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Rajiv Patel">
+                    </div>
+                    <h3 class="doctor-name">Dr. Rajiv Patel</h3>
+                    <div class="doctor-specialty">Orthopedic Surgeon</div>
+                    <div class="doctor-experience">15+ Years of Experience</div>
+                    <div class="doctor-hospital">Asia Medical Center, Singapore</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Sophia Williams">
+                    </div>
+                    <h3 class="doctor-name">Dr. Sophia Williams</h3>
+                    <div class="doctor-specialty">Plastic Surgeon</div>
+                    <div class="doctor-experience">10+ Years of Experience</div>
+                    <div class="doctor-hospital">European Health Group, Berlin</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Ram Yadav">
+                    </div>
+                    <h3 class="doctor-name">Dr. Ram Yadav</h3>
+                    <div class="doctor-specialty">Cardiothoracic Surgeon</div>
+                    <div class="doctor-experience">7+ Years of Experience</div>
+                    <div class="doctor-hospital">Global Health Institute, Bangkok</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Rajiv Patel">
+                    </div>
+                    <h3 class="doctor-name">Dr. Rajiv Patel</h3>
+                    <div class="doctor-specialty">Orthopedic Surgeon</div>
+                    <div class="doctor-experience">15+ Years of Experience</div>
+                    <div class="doctor-hospital">Asia Medical Center, Singapore</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Sophia Williams">
+                    </div>
+                    <h3 class="doctor-name">Dr. Sophia Williams</h3>
+                    <div class="doctor-specialty">Plastic Surgeon</div>
+                    <div class="doctor-experience">10+ Years of Experience</div>
+                    <div class="doctor-hospital">European Health Group, Berlin</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Ram Yadav">
+                    </div>
+                    <h3 class="doctor-name">Dr. Ram Yadav</h3>
+                    <div class="doctor-specialty">Cardiothoracic Surgeon</div>
+                    <div class="doctor-experience">7+ Years of Experience</div>
+                    <div class="doctor-hospital">Global Health Institute, Bangkok</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Rajiv Patel">
+                    </div>
+                    <h3 class="doctor-name">Dr. Rajiv Patel</h3>
+                    <div class="doctor-specialty">Orthopedic Surgeon</div>
+                    <div class="doctor-experience">15+ Years of Experience</div>
+                    <div class="doctor-hospital">Asia Medical Center, Singapore</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Sophia Williams">
+                    </div>
+                    <h3 class="doctor-name">Dr. Sophia Williams</h3>
+                    <div class="doctor-specialty">Plastic Surgeon</div>
+                    <div class="doctor-experience">10+ Years of Experience</div>
+                    <div class="doctor-hospital">European Health Group, Berlin</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Ram Yadav">
+                    </div>
+                    <h3 class="doctor-name">Dr. Ram Yadav</h3>
+                    <div class="doctor-specialty">Cardiothoracic Surgeon</div>
+                    <div class="doctor-experience">7+ Years of Experience</div>
+                    <div class="doctor-hospital">Global Health Institute, Bangkok</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Rajiv Patel">
+                    </div>
+                    <h3 class="doctor-name">Dr. Rajiv Patel</h3>
+                    <div class="doctor-specialty">Orthopedic Surgeon</div>
+                    <div class="doctor-experience">15+ Years of Experience</div>
+                    <div class="doctor-hospital">Asia Medical Center, Singapore</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Sophia Williams">
+                    </div>
+                    <h3 class="doctor-name">Dr. Sophia Williams</h3>
+                    <div class="doctor-specialty">Plastic Surgeon</div>
+                    <div class="doctor-experience">10+ Years of Experience</div>
+                    <div class="doctor-hospital">European Health Group, Berlin</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Ram Yadav">
+                    </div>
+                    <h3 class="doctor-name">Dr. Ram Yadav</h3>
+                    <div class="doctor-specialty">Cardiothoracic Surgeon</div>
+                    <div class="doctor-experience">7+ Years of Experience</div>
+                    <div class="doctor-hospital">Global Health Institute, Bangkok</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Rajiv Patel">
+                    </div>
+                    <h3 class="doctor-name">Dr. Rajiv Patel</h3>
+                    <div class="doctor-specialty">Orthopedic Surgeon</div>
+                    <div class="doctor-experience">15+ Years of Experience</div>
+                    <div class="doctor-hospital">Asia Medical Center, Singapore</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Sophia Williams">
+                    </div>
+                    <h3 class="doctor-name">Dr. Sophia Williams</h3>
+                    <div class="doctor-specialty">Plastic Surgeon</div>
+                    <div class="doctor-experience">10+ Years of Experience</div>
+                    <div class="doctor-hospital">European Health Group, Berlin</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Ram Yadav">
+                    </div>
+                    <h3 class="doctor-name">Dr. Ram Yadav</h3>
+                    <div class="doctor-specialty">Cardiothoracic Surgeon</div>
+                    <div class="doctor-experience">7+ Years of Experience</div>
+                    <div class="doctor-hospital">Global Health Institute, Bangkok</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Rajiv Patel">
+                    </div>
+                    <h3 class="doctor-name">Dr. Rajiv Patel</h3>
+                    <div class="doctor-specialty">Orthopedic Surgeon</div>
+                    <div class="doctor-experience">15+ Years of Experience</div>
+                    <div class="doctor-hospital">Asia Medical Center, Singapore</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Sophia Williams">
+                    </div>
+                    <h3 class="doctor-name">Dr. Sophia Williams</h3>
+                    <div class="doctor-specialty">Plastic Surgeon</div>
+                    <div class="doctor-experience">10+ Years of Experience</div>
+                    <div class="doctor-hospital">European Health Group, Berlin</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Ram Yadav">
+                    </div>
+                    <h3 class="doctor-name">Dr. Ram Yadav</h3>
+                    <div class="doctor-specialty">Cardiothoracic Surgeon</div>
+                    <div class="doctor-experience">7+ Years of Experience</div>
+                    <div class="doctor-hospital">Global Health Institute, Bangkok</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Rajiv Patel">
+                    </div>
+                    <h3 class="doctor-name">Dr. Rajiv Patel</h3>
+                    <div class="doctor-specialty">Orthopedic Surgeon</div>
+                    <div class="doctor-experience">15+ Years of Experience</div>
+                    <div class="doctor-hospital">Asia Medical Center, Singapore</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Sophia Williams">
+                    </div>
+                    <h3 class="doctor-name">Dr. Sophia Williams</h3>
+                    <div class="doctor-specialty">Plastic Surgeon</div>
+                    <div class="doctor-experience">10+ Years of Experience</div>
+                    <div class="doctor-hospital">European Health Group, Berlin</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Ram Yadav">
+                    </div>
+                    <h3 class="doctor-name">Dr. Ram Yadav</h3>
+                    <div class="doctor-specialty">Cardiothoracic Surgeon</div>
+                    <div class="doctor-experience">7+ Years of Experience</div>
+                    <div class="doctor-hospital">Global Health Institute, Bangkok</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 2 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Rajiv Patel">
+                    </div>
+                    <h3 class="doctor-name">Dr. Rajiv Patel</h3>
+                    <div class="doctor-specialty">Orthopedic Surgeon</div>
+                    <div class="doctor-experience">15+ Years of Experience</div>
+                    <div class="doctor-hospital">Asia Medical Center, Singapore</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                <!-- Doctor Card 3 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1594824947933-d0501ba2fe65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Sophia Williams">
+                    </div>
+                    <h3 class="doctor-name">Dr. Sophia Williams</h3>
+                    <div class="doctor-specialty">Plastic Surgeon</div>
+                    <div class="doctor-experience">10+ Years of Experience</div>
+                    <div class="doctor-hospital">European Health Group, Berlin</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                <!-- Doctor Card 1 -->
+                <div class="doctor-card">
+                    <div class="doctor-img">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Dr. Ram Yadav">
+                    </div>
+                    <h3 class="doctor-name">Dr. Ram Yadav</h3>
+                    <div class="doctor-specialty">Cardiothoracic Surgeon</div>
+                    <div class="doctor-experience">7+ Years of Experience</div>
+                    <div class="doctor-hospital">Global Health Institute, Bangkok</div>
+                    <div class="doctor-buttons">
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                        <a href="#" class="btn btn-secondary">View Profile</a>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            <!-- Navigation Buttons above divider -->
+            <div class="nav-buttons">
+                
+                <button class="nav-btn">
+                    <a href="doc2.html" class="fas fa-chevron-right"></a>
+                    
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Gods Life Health Care</h3>
+                    <p>Providing world-class medical tourism services with compassion and excellence.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li><a href="#">Doctors</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Medical Services</h3>
+                    <ul>
+                        <li><a href="#">Cardiac Surgery</a></li>
+                        <li><a href="#">Bone Cancer</a></li>
+                        <li><a href="#">Cosmetic Surgery</a></li>
+                        <li><a href="#">Dental Care</a></li>
+                        <li><a href="#">Fertility Treatments</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Medical Avenue, Health City</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@godslifehealthcare.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 Gods Life Health Care. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
